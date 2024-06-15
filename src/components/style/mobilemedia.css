@@ -1,0 +1,36 @@
+.nav.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid rgb(225, 227, 230);
+    z-index: 1000;
+  }
+
+  .nav.active li {
+    padding: 14px 20px;
+    border-bottom: 1px solid rgb(225, 227, 230);
+  }
+  
+  .nav.active li:last-child {
+    border-bottom: none;
+  }
+  
+@media screen and (max-width: 786px) {
+    .nav {
+        display: none; /* Initially hide the navigation menu */
+        /* Other styles for .nav */
+      }
+      
+      .nav.active {
+        display: flex; /* Display the navigation menu when active */
+        /* Additional styles as needed */
+      }
+
+      
+}
+
+
