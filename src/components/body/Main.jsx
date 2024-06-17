@@ -10,10 +10,10 @@ function Main() {
   return (
     <>
       <FeaturedProducts></FeaturedProducts>
-      <CenterMode />
+      {/* <CenterMode />
       <AllProduct />
       <Comments />
-      <NewProducts />
+      <NewProducts /> */}
     </>
   );
 }

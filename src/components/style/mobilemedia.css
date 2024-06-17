@@ -1,36 +1,82 @@
 .nav.active {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    border-top: 1px solid rgb(225, 227, 230);
-    z-index: 1000;
-  }
-
-  .nav.active li {
-    padding: 14px 20px;
-    border-bottom: 1px solid rgb(225, 227, 230);
-  }
-  
-  .nav.active li:last-child {
-    border-bottom: none;
-  }
-  
-@media screen and (max-width: 786px) {
-    .nav {
-        display: none; /* Initially hide the navigation menu */
-        /* Other styles for .nav */
-      }
-      
-      .nav.active {
-        display: flex; /* Display the navigation menu when active */
-        /* Additional styles as needed */
-      }
-
-      
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid rgb(225, 227, 230);
+  z-index: 1000;
 }
 
+.nav.active li {
+  padding: 14px 20px;
+  border-bottom: 1px solid rgb(225, 227, 230);
+}
 
+.nav.active li:last-child {
+  border-bottom: none;
+}
+
+@media screen and (max-width: 786px) {
+  .container {
+    padding: 0 80px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .FeaturedProduct-name {
+    font-size: 26px;
+  }
+
+  .arrow {
+    padding: 8px;
+  }
+
+  .arrow.prev {
+    left: -45px;
+    top: 50%;
+  }
+
+  .arrow.next {
+    right: -45px;
+    top: 50%;
+  }
+
+  .featured-arrow {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0 40px;
+  }
+  /* featured */
+
+  .arrow.prev {
+    left: -25px;
+    top: 50%;
+  }
+
+  .arrow.next {
+    right: -25px;
+    top: 50%;
+  }
+
+  .carousel-image {
+    max-width: 250px;
+    border-radius: 6px;
+    margin: auto;
+  }
+
+  /* featured */
+}
