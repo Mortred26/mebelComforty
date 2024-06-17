@@ -11,7 +11,7 @@ function CenterMode() {
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: "276px",
+    centerPadding: "225px",
     slidesToShow: 3,
     slidesToScroll: 1,
     speed: 500,

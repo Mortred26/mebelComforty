@@ -9,7 +9,7 @@ import "../../style/header.css";
 import "../../style/main.css";
 
 function AllProduct() {
-  const itemsPerPage = 8;
+  const itemsPerPage = 9;
   const items = [
     {
       id: 1,

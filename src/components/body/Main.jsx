@@ -9,11 +9,11 @@ import NewProducts from "./main/NewProducts";
 function Main() {
   return (
     <>
-      <FeaturedProducts></FeaturedProducts>
-      {/* <CenterMode />
+      {/* <FeaturedProducts></FeaturedProducts> */}
+      {/* <CenterMode /> */}
       <AllProduct />
-      <Comments />
-      <NewProducts /> */}
+      {/* <Comments /> */}
+      {/* <NewProducts /> */}
     </>
   );
 }
