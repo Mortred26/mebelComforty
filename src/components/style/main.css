@@ -360,6 +360,32 @@
   color: #333;
 }
 
+.addstore-flex {
+  margin-top: 0;
+}
+
+.btn-addstore {
+  margin-top: 0;
+  padding: 8px;
+}
+
+.addstore2 {
+  margin-left: auto;
+}
+
+.btnStore {
+  width: 24px;
+  height: 24px;
+}
+
+.item-text h3 {
+  font-size: 16px;
+}
+
+.addstore-price p {
+  font-size: 15px;
+}
+
 .pagination {
   margin-top: 20px;
   display: flex;
@@ -374,7 +400,7 @@
   background-color: #fff;
   padding: 7px;
   border-radius: 8px;
-  box-shadow: 1px 10px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
 }
 
 .pagination .page-number {

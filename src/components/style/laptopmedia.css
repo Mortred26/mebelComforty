@@ -19,19 +19,50 @@
     height: 60px;
     padding: 15px;
   }
+
   .slider-text h3 {
     font-size: 14px;
   }
+
   .slider-text p {
     font-size: 12px;
   }
+  /* all product */
   .allProduct-main {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
   }
+
   .allproduct {
     max-width: 350px;
   }
+
+  .addstore-flex {
+    margin-top: 0;
+  }
+
+  .btn-addstore {
+    margin-top: 0;
+    padding: 8px;
+  }
+
+  .addstore2 {
+    margin-left: auto;
+  }
+
+  .btnStore {
+    width: 20px;
+    height: 20px;
+  }
+
+  .item-text h3 {
+    font-size: 14px;
+  }
+
+  .addstore-price p {
+    font-size: 14px;
+  }
+  /* all product end */
 }
 
 @media screen and (max-width: 1298px) {
@@ -66,7 +97,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
   }
-
+  /* all product */
   .allproduct {
     max-width: 300px;
   }
@@ -78,6 +109,34 @@
   .allProducts-page {
     font-size: 15px;
   }
+
+  .addstore-flex {
+    margin-top: 0;
+  }
+
+  .btn-addstore {
+    margin-top: 0;
+    padding: 8px;
+  }
+
+  .addstore2 {
+    margin-left: auto;
+  }
+
+  .btnStore {
+    width: 20px;
+    height: 20px;
+  }
+
+  .item-text h3 {
+    font-size: 14px;
+  }
+
+  .addstore-price p {
+    font-size: 14px;
+  }
+
+  /* all product end */
 }
 
 @media screen and (max-width: 1024px) {
@@ -317,7 +376,7 @@
 
   .allProduct-main {
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 18px;
   }
 
   .allProduct-name {
@@ -327,5 +386,51 @@
   .allProducts-page {
     font-size: 14px;
   }
+
+  .addstore-flex {
+    margin-top: 0;
+  }
+
+  .btn-addstore {
+    margin-top: 0;
+    padding: 5px;
+  }
+
+  .addstore2 {
+    margin-left: auto;
+  }
+
+  .btnStore {
+    width: 18px;
+    height: 18px;
+  }
+
+  .item-text h3 {
+    font-size: 12px;
+  }
+
+  .addstore-price p {
+    font-size: 12px;
+  }
+
+  .pagination-style {
+    padding: 6px;
+    border-radius: 7px;
+  }
+
+  .pagination .page-number {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+
+  .arrow-page {
+    width: 24px;
+    height: 24px;
+  }
+
+  .page-arrow {
+    margin: 0 8px;
+  }
+
   /* all product end*/
 }
