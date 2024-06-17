@@ -78,5 +78,20 @@
     margin: auto;
   }
 
+  .btn-addstore {
+    padding: 8px;
+  }
+
+  .btnStore {
+    fill: black;
+    width: 16px;
+    height: 16px;
+  }
+
+  .FeaturedProduct-name {
+    margin-bottom: 25px;
+    font-size: 22px;
+  }
+
   /* featured */
 }
