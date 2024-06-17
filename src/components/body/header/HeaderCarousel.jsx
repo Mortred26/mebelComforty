@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../../style/header.css";
 import "../../style/laptopmedia.css";
+import "../../style/mobilemedia.css";
+import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 
 const HeaderCarousel = () => {
   const slides = [
@@ -41,7 +43,7 @@ const HeaderCarousel = () => {
     <section className="section2">
       <div className="header-baground">
         <button className="left-arrow" onClick={prevSlide}>
-          <img src="/image/Left Arrow.png" alt="" />
+          <HiArrowNarrowLeft className="featured-arrow" />
         </button>
 
         <div className="container2">
@@ -79,7 +81,7 @@ const HeaderCarousel = () => {
           </div>
         </div>
         <button className="right-arrow" onClick={nextSlide}>
-          <img src="/image/Right Arrow.png" alt="" />
+          <HiArrowNarrowRight className="featured-arrow" />
         </button>
       </div>
     </section>

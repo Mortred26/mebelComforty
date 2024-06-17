@@ -357,12 +357,41 @@ body {
   position: absolute;
   left: 88px;
   border: none;
+  background-color: #fff;
+  border-radius: 100%;
+  padding: 10px 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .right-arrow {
   position: absolute;
   right: 88px;
   border: none;
+  background-color: #fff;
+  border-radius: 100%;
+  padding: 10px 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.featured-arrow {
+  width: 24px;
+}
+
+.right-arrow:hover .featured-arrow {
+  fill: #fff;
+}
+
+.left-arrow:hover .featured-arrow {
+  fill: #fff;
+}
+
+.right-arrow:hover,
+.left-arrow:hover {
+  background-color: rgb(2, 159, 174);
 }
 
 .dots {

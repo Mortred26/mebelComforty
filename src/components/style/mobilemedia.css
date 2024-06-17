@@ -5,7 +5,7 @@
   position: absolute;
   top: 67px;
   left: 0;
-  width: 40%;
+  width: 50%;
   background-color: #fff;
   border-top: 1px solid rgb(225, 227, 230);
   z-index: 1000;
@@ -36,6 +36,10 @@
 
 @media screen and (max-width: 786px) {
   .container {
+    padding: 0 70px;
+  }
+
+  .container2 {
     padding: 0 80px;
   }
 
@@ -51,6 +55,45 @@
     display: block;
   }
 
+  .headerinfo-text {
+    margin-top: 65px;
+  }
+
+  .headerinfo-name {
+    font-size: 28px;
+  }
+
+  .btn-shopping {
+    margin-bottom: 90px;
+  }
+
+  .btn-shopping p {
+    margin-right: 0px;
+    font-size: 12px;
+    padding: 0 5px;
+  }
+
+  .left-arrow {
+    left: 30px;
+  }
+
+  .right-arrow {
+    right: 30px;
+  }
+
+  .featured-arrow {
+    width: 20px;
+    height: 20px;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    padding: 9px;
+  }
+
+  .dots {
+    display: none;
+  }
   /* featured */
 
   .logo li {
@@ -111,9 +154,23 @@
   /* featured */
 }
 
+@media screen and (max-width: 520px) {
+  .headerinfo-name {
+    font-size: 24px;
+  }
+}
+
 @media screen and (max-width: 480px) {
+  .section2 {
+    margin: 0 30px;
+  }
+
   .container {
-    padding: 0 40px;
+    padding: 0 50px;
+  }
+
+  .container2 {
+    padding: 0 30px;
   }
   /* header-search */
   .logotip {
@@ -127,6 +184,55 @@
 
   .logo h2 {
     font-size: 16px;
+  }
+  .headerinfo-text {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 10px;
+  }
+
+  .header-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .headerinfo-name {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .btn-shopping {
+    margin-top: 15 px;
+    margin-bottom: 50px;
+    width: 170px;
+  }
+
+  .featured-arrow {
+    width: 14px;
+    height: 14px;
+  }
+
+  .header-main {
+    flex-direction: column-reverse;
+  }
+
+  .carousel-image img {
+    margin-top: 50px;
+    max-width: 170px;
+  }
+
+  .right-arrow {
+    right: 20px;
+  }
+
+  .left-arrow {
+    left: 20px;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    padding: 5px;
   }
 
   /* haeder-search */
