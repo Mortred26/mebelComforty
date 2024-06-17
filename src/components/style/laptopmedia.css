@@ -195,6 +195,10 @@
     max-width: 500px;
   }
 
+  .btn-shopping p {
+    margin-right: 10px;
+  }
+
   /* navbar end */
 
   /* Carousel */
