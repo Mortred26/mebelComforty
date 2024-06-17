@@ -32,6 +32,12 @@
     display: flex;
   }
 
+  /* featured */
+
+  .logo li {
+    width: calc(100% / 3 - 30px);
+  }
+
   .FeaturedProduct-name {
     font-size: 26px;
   }
@@ -54,6 +60,7 @@
     width: 16px;
     height: 16px;
   }
+  /* featured */
 }
 
 @media screen and (max-width: 480px) {
@@ -61,6 +68,14 @@
     padding: 0 40px;
   }
   /* featured */
+
+  .logo-img {
+    max-width: 60px;
+  }
+
+  .logo li {
+    width: calc(100% / 3 - 30px);
+  }
 
   .arrow.prev {
     left: -25px;

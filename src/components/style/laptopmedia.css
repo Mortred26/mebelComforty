@@ -1,3 +1,14 @@
+@media screen and (max-width: 1500px) {
+  .logo {
+    margin-left: -50px;
+  }
+
+  .logo li {
+    width: calc(100% / 7 - 50px);
+    margin-left: 50px;
+  }
+}
+
 @media screen and (max-width: 1298px) {
   .container {
     padding: 0 160px;
@@ -187,6 +198,7 @@
   /* Carousel */
 
   /* main */
+
   /* FeatureProduct */
 
   .logo {
@@ -194,12 +206,8 @@
   }
 
   .logo li {
-    width: calc(100% / 5 - 30px);
+    width: calc(100% / 4 - 30px);
     margin-left: 30px;
-  }
-
-  .item:not(:nth-last-child(1)) {
-    margin-right: 50px;
   }
 
   .FeaturedProduct-name {

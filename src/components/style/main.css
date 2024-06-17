@@ -98,7 +98,8 @@
 }
 
 .logo-img {
-  max-width: 109px;
+  max-width: 100%;
+  height: auto;
 }
 
 .FeaturedProduct {

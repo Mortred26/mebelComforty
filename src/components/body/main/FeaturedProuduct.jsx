@@ -70,6 +70,7 @@ const FeaturedProducts = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: false,
         },
       },
     ],
@@ -173,7 +174,7 @@ const FeaturedProducts = () => {
   return (
     <>
       <div className="container">
-        {/* <ul className="logo">
+        <ul className="logo">
           {[...Array(7)].map((_, index) => (
             <li key={index}>
               <img
@@ -183,7 +184,7 @@ const FeaturedProducts = () => {
               />
             </li>
           ))}
-        </ul> */}
+        </ul>
         <div className="FeaturedProduct">
           <h2 className="FeaturedProduct-name">Featured Products</h2>
           <Slider {...settings}>{renderItems}</Slider>
