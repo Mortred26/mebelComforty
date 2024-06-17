@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../style/header.css";
 import "../../style/laptopmedia.css";
+import "../../style//mobilemedia.css";
 import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import { IoSearch } from "react-icons/io5";
 import { FaHeart, FaRegHeart } from "react-icons/fa";

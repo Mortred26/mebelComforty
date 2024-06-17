@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
-    {/* <Header></Header> */}
-    <Main></Main>
+    <Header></Header>
+    {/* <Main></Main> */}
     {/* <Footer></Footer> */}
     </>
   );

@@ -1,9 +1,9 @@
 @media screen and (max-width: 1500px) {
-  .logo {
+  .category-logo {
     margin-left: -50px;
   }
 
-  .logo li {
+  .category-logo li {
     width: calc(100% / 7 - 50px);
     margin-left: 50px;
   }
@@ -72,7 +72,7 @@
   }
 
   .input-search input::placeholder {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .headerSearch-img {
@@ -118,6 +118,23 @@
   .profile {
     padding: 6px;
   }
+
+  .navbar-telephone {
+    display: block;
+    background-color: #fff;
+    border: none;
+    text-decoration: none;
+  }
+
+  .btn-telephone {
+    border: none;
+    fill: rgb(2, 159, 174);
+  }
+
+  .contact-number,
+  .contact-name {
+    display: none;
+  }
   /* header-search-end */
 
   /*  Navbar*/
@@ -158,6 +175,10 @@
   .contact-number {
     font-size: 12px;
   }
+
+  .btn-shopping {
+    margin-bottom: 140px;
+  }
   /* navbar end */
 
   /* Carousel */
@@ -176,7 +197,7 @@
 
   .headerinfo-text {
     font-size: 12px;
-    margin-top: 140px;
+    margin-top: 80px;
   }
 
   .headerinfo-name {
@@ -201,11 +222,11 @@
 
   /* FeatureProduct */
 
-  .logo {
+  .category-logo {
     margin-left: -30px;
   }
 
-  .logo li {
+  .category-logo li {
     width: calc(100% / 4 - 30px);
     margin-left: 30px;
   }

@@ -174,7 +174,7 @@ const FeaturedProducts = () => {
   return (
     <>
       <div className="container">
-        <ul className="logo">
+        <ul className="category-logo">
           {[...Array(7)].map((_, index) => (
             <li key={index}>
               <img

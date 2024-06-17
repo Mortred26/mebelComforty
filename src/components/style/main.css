@@ -13,6 +13,7 @@
 /* header.css */
 .section1 {
   background-color: rgb(255, 255, 255);
+  position: relative;
 }
 
 .navbar {
@@ -85,13 +86,14 @@
 }
 
 /* laptopmedia.css */
-.logo {
+.category-logo {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   margin-left: -70px;
 }
 
-.logo li {
+.category-logo li {
   list-style-type: none;
   width: calc(100% / 7 - 70px);
   margin-left: 70px;
