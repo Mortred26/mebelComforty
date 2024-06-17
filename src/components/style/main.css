@@ -203,11 +203,15 @@
 .arrow.prev {
   top: -40px;
   right: 60px;
+  display: flex;
+  align-items: center;
 }
 
 .arrow.next {
   top: -40px;
   right: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .featured-arrow {
