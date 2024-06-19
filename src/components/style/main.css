@@ -223,13 +223,14 @@
 
 /* Carousel2 */
 .section3 {
-  max-width: 1920px;
+  max-width: 2200px;
   margin: 0 auto;
   padding: 80px 0;
+  overflow: hidden;
 }
 
 .topCategory-name {
-  font-weight: 32px;
+  font-size: 32px;
   font-weight: 600;
   color: rgb(39, 35, 67);
   font-family: "Inter", sans-serif;
@@ -237,15 +238,14 @@
 }
 
 .slick-slide {
-  /* max-width: 450px;
-  width: 100%; */
-  max-width: 450px;
+  width: 100%;
 }
 
 .slide img {
   width: 100%;
   max-width: 450px;
   outline: none;
+  border-radius: 0px 0px 10px 10px;
 }
 
 .slick-slide:not(:nth-last-child(1)) {
@@ -268,16 +268,16 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: auto;
   max-width: 450px;
-  padding: 20px;
+  height: auto;
+  padding: 22px;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
 .slider-text h3 {
   font-family: "Inter", sans-serif;
   color: rgb(255, 255, 255);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: 0%;
 }
@@ -285,7 +285,7 @@
 .slider-text p {
   text-transform: capitalize;
   letter-spacing: 0%;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: rgb(255, 255, 255);
   opacity: 0.7;

@@ -10,8 +10,8 @@ function Main() {
   return (
     <>
       {/* <FeaturedProducts></FeaturedProducts> */}
-      {/* <CenterMode /> */}
-      <AllProduct />
+      <CenterMode />
+      {/* <AllProduct /> */}
       {/* <Comments /> */}
       {/* <NewProducts /> */}
     </>
