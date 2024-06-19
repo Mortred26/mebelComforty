@@ -23,7 +23,7 @@ function HeadSearch() {
         <div className="header-search">
           <div className="logo">
             <img className="logotip" src="/image/Logo Icon.png" alt="" />
-            <h2>Comforty</h2>
+            <h2>Remona Mebel</h2>
           </div>
           <div className="input-search">
             <input type="text" placeholder="Search here..." />

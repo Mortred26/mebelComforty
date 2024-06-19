@@ -208,6 +208,7 @@
   .btn-addstore {
     margin-top: 0;
     padding: 6px;
+    border-radius: 6px;
   }
 
   .addstore2 {
@@ -242,6 +243,99 @@
   }
 
   /* all product end*/
+  /* What client says about us */
+  .comment-main {
+    gap: 15px;
+  }
+
+  .comment-text-container {
+    height: 140px;
+  }
+
+  .comment {
+    padding: 20px;
+  }
+
+  .comment-heading {
+    font-size: 24px;
+  }
+
+  .comment-name {
+    font-size: 15px;
+  }
+
+  .comment-text {
+    font-size: 12px;
+  }
+
+  .comment-work {
+    font-size: 12px;
+  }
+
+  .nav-button {
+    padding: 9px;
+    margin: 0 7px;
+  }
+  /* What client says about us end */
+}
+
+@media screen and (max-width: 610px) {
+  /* What client says about us */
+  .comment-relative {
+    position: relative;
+  }
+
+  .comment-heading-flex {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .comment-main {
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .comment-text-container {
+    height: 140px;
+  }
+
+  .comment {
+    padding: 20px;
+  }
+
+  .comment-heading {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .comment-name {
+    font-size: 15px;
+  }
+
+  .comment-text {
+    font-size: 12px;
+  }
+
+  .comment-work {
+    font-size: 12px;
+  }
+
+  .comment-navigation {
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+
+  .nav-button:last-child {
+    padding: 9px;
+    margin: 0 7px;
+    position: absolute;
+    right: 0;
+  }
+
+  /* What client says about us end */
 }
 
 @media screen and (max-width: 520px) {
@@ -268,16 +362,18 @@
   }
   /* header-search */
   .logotip {
-    width: 16px;
-    height: 16px;
+    width: 19px;
+    height: 19px;
   }
 
   .input-search input {
     padding: 4px 8px;
+    height: 35px;
+    border-radius: 4px;
   }
 
   .logo h2 {
-    font-size: 16px;
+    font-size: 17px;
   }
   .headerinfo-text {
     text-align: center;
@@ -334,6 +430,10 @@
     padding: 5px;
   }
 
+  .all-category {
+    padding: 10px;
+  }
+
   /* haeder-search */
   /* featured */
 
@@ -350,8 +450,12 @@
     margin-left: 20px;
   }
 
+  .arrow {
+    padding: 6px;
+  }
+
   .arrow.prev {
-    left: -25px;
+    left: -28px;
     top: 50%;
   }
 
@@ -360,25 +464,25 @@
     top: 50%;
   }
 
+  .addstore-flex {
+    max-width: 200px;
+  }
+
   .carousel-image {
-    max-width: 250px;
+    max-width: 200px;
     border-radius: 6px;
     margin: auto;
   }
 
-  .btn-addstore {
-    padding: 8px;
-  }
-
   .btnStore {
     fill: black;
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
   }
 
   .FeaturedProduct-name {
-    margin-bottom: 25px;
-    font-size: 22px;
+    margin-bottom: 20px;
+    font-size: 16px;
   }
 
   /* featured end*/
@@ -390,8 +494,9 @@
   }
 
   .topCategory-name {
-    font-size: 12px;
+    font-size: 16px;
     margin-bottom: 22px;
+    text-align: center;
   }
 
   .slide img {
@@ -420,19 +525,21 @@
 
   .allProduct-main {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 8px;
   }
 
   .allproduct {
     padding: 5px;
+    max-width: 130px;
+    margin: auto;
   }
 
   .allProduct-name {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .allProducts-page {
-    font-size: 10px;
+    font-size: 8px;
   }
 
   .addstore-flex {
@@ -441,7 +548,8 @@
 
   .btn-addstore {
     margin-top: 0;
-    padding: 6px;
+    padding: 5px;
+    border-radius: 5px;
   }
 
   .addstore2 {
@@ -449,11 +557,11 @@
   }
 
   .item-text h3 {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .addstore-price p {
-    font-size: 11px;
+    font-size: 8px;
   }
 
   .pagination-style {
@@ -480,4 +588,29 @@
   }
 
   /* all-product */
+
+  /* What client says about us */
+  .comment-text-container {
+    height: 120px;
+  }
+
+  .comment-heading {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .comment-name {
+    font-size: 12px;
+  }
+
+  .comment-text {
+    font-size: 12px;
+  }
+
+  .comment-work {
+    font-size: 10px;
+  }
+
+  /* What client says about us end */
 }

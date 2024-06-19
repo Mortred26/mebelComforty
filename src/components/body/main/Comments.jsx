@@ -80,27 +80,29 @@ function Comments() {
   return (
     <section className="section5">
       <div className="container">
-        <div className="comment-heading-flex">
-          <h2 className="comment-heading">What client says about us</h2>
-          <div className="comment-navigation">
-            <button onClick={handlePrevClick} className="nav-button">
-              <HiArrowNarrowLeft className="featured-arrow" />
-            </button>
-            <button onClick={handleNextClick} className="nav-button">
-              <HiArrowNarrowRight className="featured-arrow" />
-            </button>
-          </div>
-        </div>
-        <div className="comment-main">
-          {visibleComments.map((item) => (
-            <div key={item.id} className="comment">
-              <div className="comment-text-container">
-                <p className="comment-text">{item.comment}</p>
-              </div>
-              <h3 className="comment-name">{item.name}</h3>
-              <p className="comment-work">{item.work}</p>
+        <div className="comment-relative">
+          <div className="comment-heading-flex">
+            <h2 className="comment-heading">What client says about us</h2>
+            <div className="comment-navigation">
+              <button onClick={handlePrevClick} className="nav-button">
+                <HiArrowNarrowLeft className="featured-arrow" />
+              </button>
+              <button onClick={handleNextClick} className="nav-button">
+                <HiArrowNarrowRight className="featured-arrow" />
+              </button>
             </div>
-          ))}
+          </div>
+          <div className="comment-main">
+            {visibleComments.map((item) => (
+              <div key={item.id} className="comment">
+                <div className="comment-text-container">
+                  <p className="comment-text">{item.comment}</p>
+                </div>
+                <h3 className="comment-name">{item.name}</h3>
+                <p className="comment-work">{item.work}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

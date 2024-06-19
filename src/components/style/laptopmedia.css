@@ -135,8 +135,32 @@
   .addstore-price p {
     font-size: 14px;
   }
-
   /* all product end */
+  /* What client says about us */
+  .comment-text-container {
+    height: 170px;
+  }
+
+  .comment {
+    padding: 35px;
+  }
+
+  .comment-heading {
+    font-size: 30px;
+  }
+
+  .comment-name {
+    font-size: 18px;
+  }
+
+  .comment-text {
+    font-size: 18px;
+  }
+
+  .comment-work {
+    font-size: 15px;
+  }
+  /* What client says about us end */
 }
 
 @media screen and (max-width: 1024px) {
@@ -147,7 +171,7 @@
   }
 
   .item {
-    width: 200px;
+    max-width: 200px;
   }
 
   .header-search {
@@ -428,7 +452,8 @@
 
   .btn-addstore {
     margin-top: 0;
-    padding: 5px;
+    padding: 7px;
+    border-radius: 7px;
   }
 
   .addstore2 {
@@ -466,6 +491,35 @@
   .page-arrow {
     margin: 0 8px;
   }
-
   /* all product end*/
+
+  /* What client says about us */
+  .comment-text-container {
+    height: 140px;
+  }
+
+  .comment {
+    padding: 30px;
+  }
+
+  .comment-heading {
+    font-size: 27px;
+  }
+
+  .comment-name {
+    font-size: 15px;
+  }
+
+  .comment-text {
+    font-size: 15px;
+  }
+
+  .comment-work {
+    font-size: 14px;
+  }
+
+  .nav-button {
+    padding: 10px;
+  }
+  /* What client says about us end */
 }
