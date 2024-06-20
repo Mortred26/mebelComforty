@@ -1,0 +1,308 @@
+.detail-container {
+  margin: 0 auto;
+  padding: 40px 250px;
+  max-width: 1920px;
+}
+
+.detail-flex {
+  display: flex;
+  align-items: flex-start;
+}
+
+.detail-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin-right: 40px;
+  margin-bottom: 24px;
+}
+
+.detail-heading {
+  font-size: 40px;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-family: "Inter";
+  margin-bottom: 12px;
+}
+
+.detailprice-flex {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.detail-price {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  font-family: "Inter";
+}
+
+.detail-span {
+  opacity: 0.4;
+}
+
+.detail-action {
+  background-color: rgb(245 129 63);
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+.detail-text {
+  font-size: 16px;
+  font-family: "Inter";
+  margin-bottom: 24px;
+  max-width: 531px;
+}
+
+.detail-info {
+  list-style-type: none;
+  margin-bottom: 24px;
+}
+
+.detail-info li {
+  color: rgb(154 156 170);
+  font-size: 15px;
+  font-family: "Inter";
+  font-weight: 600;
+}
+
+.detailinfo-span {
+  color: black;
+  font-family: "Inter";
+  font-weight: 700;
+}
+
+.detailstore-flex {
+  display: flex;
+}
+
+.stock-add {
+  display: flex;
+  justify-content: center;
+  padding: 5px 14px;
+  border: 1px solid rgb(214 217 221);
+  width: 110px;
+  border-radius: 6px;
+}
+
+.stock-add p {
+  font-size: 16px;
+  margin: 0 10px;
+  width: 50px;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stock-add button {
+  background-color: white;
+  border: none;
+}
+
+.detail-addcart {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(2 159 174);
+  border-radius: 6px;
+  border: none;
+  margin-left: 10px;
+  color: #fff;
+  text-transform: capitalize;
+  font-family: "Inter";
+  font-size: 16px;
+}
+
+.detailstore-btn {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  fill: #fff;
+}
+
+.detail-heart {
+  border: 1px solid rgb(214 217 221);
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #fff;
+  margin-left: 10px;
+}
+
+.detailheart-btn {
+  width: 24px;
+  height: 24px;
+}
+
+.detaildescription-name {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Inter";
+  margin-bottom: 12px;
+}
+
+.detail-desctiption {
+  max-width: 730px;
+  color: rgb(99 98 112);
+  font-size: 16px;
+  line-height: 32px;
+  font-family: "Inter";
+}
+
+@media screen and (max-width: 1500px) {
+  .detail-heading {
+    font-size: 32px;
+  }
+
+  .detail-price {
+    font-size: 20px;
+  }
+
+  .detail-text {
+    font-size: 15px;
+  }
+
+  .detail-info li {
+    font-size: 14px;
+  }
+
+  .stock-add {
+    padding: 4px 12px;
+    width: 100px;
+  }
+
+  .detail-addcart {
+    font-size: 15px;
+  }
+
+  .detailstore-btn {
+    width: 20px;
+    height: 20px;
+  }
+
+  .detailheart-btn {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 1298px) {
+  .detail-container {
+    padding: 40px 150px;
+  }
+
+  .detail-flex {
+    flex-direction: column;
+  }
+
+  .detail-image {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .detailstore-flex {
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .detail-container {
+    padding: 40px 120px;
+  }
+
+  .detail-heading {
+    font-size: 26px;
+  }
+
+  .detail-price {
+    font-size: 18px;
+  }
+
+  .detail-text {
+    font-size: 14px;
+  }
+
+  .detail-info li {
+    font-size: 13px;
+  }
+
+  .stock-add {
+    padding: 4px 12px;
+    width: 100px;
+  }
+
+  .detail-addcart {
+    font-size: 14px;
+  }
+
+  .detailstore-btn {
+    width: 18px;
+    height: 18px;
+  }
+
+  .detailheart-btn {
+    width: 18px;
+    height: 18px;
+  }
+
+  .detaildescription-name {
+    font-size: 20px;
+  }
+
+  .detail-desctiption {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .detail-container {
+    padding: 30px 40px;
+  }
+
+  .detail-heading {
+    font-size: 22px;
+  }
+
+  .detail-price {
+    font-size: 16px;
+  }
+
+  .detail-text {
+    font-size: 12px;
+  }
+
+  .detail-info li {
+    font-size: 12px;
+  }
+
+  .stock-add {
+    padding: 4px 12px;
+    width: 100px;
+  }
+
+  .detail-addcart {
+    font-size: 13px;
+  }
+
+  .detailstore-btn {
+    width: 18px;
+    height: 18px;
+  }
+
+  .detailheart-btn {
+    width: 18px;
+    height: 18px;
+  }
+
+  .detaildescription-name {
+    font-size: 18px;
+  }
+
+  .detail-desctiption {
+    font-size: 12px;
+  }
+}

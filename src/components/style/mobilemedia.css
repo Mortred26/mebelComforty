@@ -47,7 +47,7 @@
 
   .all-category {
     position: absolute;
-    top: 49px;
+    top: 52px;
     left: 33px;
     padding: 5px;
   }
@@ -72,7 +72,7 @@
 
   .navbar-telephone {
     position: absolute;
-    top: 50px;
+    top: 52px;
     right: 35px;
     padding: 3px 5px;
     border-radius: 4px;
@@ -300,6 +300,11 @@
     font-size: 24px;
   }
 
+  .comment-text-container {
+    margin-bottom: 10px;
+    margin-right: 0px;
+  }
+
   .comment-name {
     font-size: 15px;
   }
@@ -402,6 +407,10 @@
     padding: 0 30px;
   }
   /* header-search */
+  .header-search {
+    padding: 14px 10px;
+  }
+
   .logotip {
     width: 19px;
     height: 19px;
@@ -471,14 +480,14 @@
   }
 
   .all-category {
-    left: 5px;
-    top: 44px;
+    left: 15px;
+    top: 47px;
     padding: 5px;
   }
 
   .navbar-telephone {
-    top: 45px;
-    right: 5px;
+    top: 47px;
+    right: 15px;
   }
   /* haeder-search */
   /* featured */
@@ -637,21 +646,33 @@
 
   /* What client says about us */
   .comment-text-container {
-    height: 100px;
+    height: 80px;
   }
 
   .comment-heading {
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     margin-bottom: 28px;
   }
 
+  .comment {
+    padding: 10px;
+  }
+
   .comment-name {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .comment-text {
-    font-size: 10px;
+    font-size: 9px;
+    margin-left: 10px;
+  }
+
+  .comment-text-container {
+    scrollbar-width: 1px;
+    scrollbar-color: #fff;
+    margin-bottom: 10px;
+    margin-right: 0px;
   }
 
   .comment-work {

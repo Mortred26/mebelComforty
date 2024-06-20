@@ -21,6 +21,10 @@
   padding: 14px 0px;
 }
 
+.router-link {
+  text-decoration: none;
+}
+
 .all-category {
   display: flex;
   align-items: center;
@@ -116,6 +120,7 @@
   font-family: "Inter", sans-serif;
   margin-bottom: 44px;
   text-transform: capitalize;
+  margin-left: 10px;
 }
 
 .slick-slide {
@@ -478,7 +483,6 @@
 .comment-text-container::-webkit-scrollbar-track {
   background: rgb(240, 242, 243);
   width: 1px;
-  box-shadow: 1px 10px 25px rgba(0, 0, 0, 0.7);
 }
 
 .comment-text-container::-webkit-scrollbar-thumb {
@@ -514,7 +518,7 @@
   font-size: 20px;
   font-weight: 400;
   color: rgb(99, 98, 112);
-  font-family: "Inter", sans-serif;
+  font-family: "Inter";
   line-height: 150%;
   direction: ltr;
   margin-left: 24px;

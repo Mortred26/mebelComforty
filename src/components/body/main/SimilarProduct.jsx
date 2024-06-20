@@ -3,11 +3,11 @@ import Slider from "react-slick";
 import "../../style/main.css";
 import "../../style/header.css";
 import "../../style/laptopmedia.css";
+import "../../style/mobilemedia.css";
 import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
-import { Link } from "react-router-dom";
 
-const FeaturedProducts = () => {
+const SimilarProduct = () => {
   const NextArrow = ({ onClick }) => {
     return (
       <div className="arrow next" onClick={onClick}>
@@ -39,7 +39,7 @@ const FeaturedProducts = () => {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -48,7 +48,7 @@ const FeaturedProducts = () => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -56,6 +56,7 @@ const FeaturedProducts = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
+          dots: false,
         },
       },
       {
@@ -63,6 +64,7 @@ const FeaturedProducts = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          dots: false,
         },
       },
       {
@@ -163,10 +165,7 @@ const FeaturedProducts = () => {
       />
       <div className="addstore-flex">
         <div className="item-text">
-          {/* <h3>{item.title}</h3> */}
-          <Link className="router-link" to={`/details/${item.id}`}>
-            <h3>{item.title}</h3>
-          </Link>
+          <h3>{item.title}</h3>
           <div className="addstore-price">
             <p>
               {item.price} <span>{item.oldprice}</span>
@@ -185,19 +184,8 @@ const FeaturedProducts = () => {
   return (
     <>
       <div className="container">
-        <ul className="category-logo">
-          {[...Array(7)].map((_, index) => (
-            <li key={index}>
-              <img
-                className="logo-img"
-                src={`/image/logo/Logo (${index + 1}).png`}
-                alt={`Logo ${index + 1}`}
-              />
-            </li>
-          ))}
-        </ul>
         <div className="FeaturedProduct">
-          <h2 className="FeaturedProduct-name">Featured Products</h2>
+          <h2 className="FeaturedProduct-name ">recently Added</h2>
           <Slider {...settings}>{renderItems}</Slider>
         </div>
       </div>
@@ -205,4 +193,4 @@ const FeaturedProducts = () => {
   );
 };
 
-export default FeaturedProducts;
+export default SimilarProduct;

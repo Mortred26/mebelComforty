@@ -6,6 +6,7 @@ import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import { IoSearch } from "react-icons/io5";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 function HeadSearch() {
   const [isActive, setIsActive] = useState(false);
@@ -22,7 +23,9 @@ function HeadSearch() {
       <div className="container">
         <div className="header-search">
           <div className="logo">
-            <img className="logotip" src="/image/Logo Icon.png" alt="" />
+            <Link to="/">
+              <img className="logotip" src="/image/Logo Icon.png" alt="" />
+            </Link>
             <h2>Remona Mebel</h2>
           </div>
           <div className="input-search">
