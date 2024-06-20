@@ -333,6 +333,7 @@
     margin: 0 7px;
     position: absolute;
     right: 0;
+    top: 0;
   }
 
   /* What client says about us end */
@@ -591,7 +592,7 @@
 
   /* What client says about us */
   .comment-text-container {
-    height: 120px;
+    height: 100px;
   }
 
   .comment-heading {
@@ -601,15 +602,29 @@
   }
 
   .comment-name {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .comment-text {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .comment-work {
-    font-size: 10px;
+    font-size: 9px;
+  }
+
+  .nav-button {
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-button:last-child {
+    padding: 6px;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 
   /* What client says about us end */

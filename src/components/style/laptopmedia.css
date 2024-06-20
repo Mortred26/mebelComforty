@@ -62,6 +62,7 @@
   .addstore-price p {
     font-size: 14px;
   }
+
   /* all product end */
 }
 
@@ -163,7 +164,7 @@
   /* What client says about us end */
 }
 
-@media screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
   /* header tablet */
   /* header-search */
   .container {
@@ -522,4 +523,5 @@
     padding: 10px;
   }
   /* What client says about us end */
+  /* footer */
 }

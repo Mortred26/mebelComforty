@@ -184,7 +184,7 @@ const FeaturedProducts = () => {
     <>
       <div className="container">
         <div className="FeaturedProduct">
-          <h2 className="FeaturedProduct-name">recently Added</h2>
+          <h2 className="FeaturedProduct-name ">recently Added</h2>
           <Slider {...settings}>{renderItems}</Slider>
         </div>
       </div>

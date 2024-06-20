@@ -2,6 +2,8 @@ import React from "react";
 import { CiInstagram } from "react-icons/ci";
 import { FaFacebook, FaPinterest, FaTwitter, FaYoutube } from "react-icons/fa";
 import "../style/footer.css";
+import "../style/laptopmedia.css";
+import "../style/mobilemedia.css";
 function Footer() {
   return (
     <footer className="footer">
@@ -49,17 +51,6 @@ function Footer() {
             <li>Privacy Policy</li>
             <li>Help</li>
           </ul>
-          <div className="footer-search">
-            <h3>Newsletter</h3>
-            <div className="footerSearch">
-              <input type="text" placeholder="Your email" />
-              <button className="btn-footeSearch">Subscribe</button>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              tincidunt erat enim.
-            </p>
-          </div>
         </div>
       </div>
     </footer>
