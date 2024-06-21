@@ -4,7 +4,6 @@ import "../../style/laptopmedia.css";
 import "../../style/mobilemedia.css";
 import { MdOutlineMenu, MdClose } from "react-icons/md";
 import { BsTelephoneInboundFill } from "react-icons/bs";
-import { Link } from "react-alice-carousel";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -36,14 +35,13 @@ function Navbar() {
     <section className="section1">
       <div className="container">
         <div className="navbar">
-          <div className="all-category">
-            <button className="btn-menu" onClick={toggleMenu}>
-              {menuOpen && isMobile ? (
-                <MdClose className="menu-svg" />
-              ) : (
-                <MdOutlineMenu className="menu-svg" />
-              )}
-            </button>
+          <div className="all-category" onClick={toggleMenu}>
+            {menuOpen && isMobile ? (
+              <MdClose className="menu-svg" />
+            ) : (
+              <MdOutlineMenu className="menu-svg" />
+            )}
+            <button className="btn-menu"></button>
             <p>All Categories</p>
           </div>
 
@@ -51,11 +49,27 @@ function Navbar() {
             <li className="close-button" onClick={closeMenu}>
               <MdClose className="navbar-close" />
             </li>
-            <li>Comfort</li>
-            <li>Lux</li>
-            <li>Ultra-lux</li>
-            <li>New</li>
-            <li>Favorite</li>
+            <li className="navmenu">
+              <img className="logotip" src="/image/Logo Icon.png" alt="" />
+              <h3 className="navmenu-name"> Remona mebel</h3>
+            </li>
+            <li>
+              <a className="navcomfort-list" href="#">
+                Comfort
+              </a>
+            </li>
+            <li>
+              <a href="#">Lux</a>
+            </li>
+            <li>
+              <a href="#">Ultra-lux</a>
+            </li>
+            <li>
+              <a href="#">New</a>
+            </li>
+            <li>
+              <a href="#">Favorite</a>
+            </li>
           </ul>
           <div className="contact">
             <p className="contact-name">Contact:</p>

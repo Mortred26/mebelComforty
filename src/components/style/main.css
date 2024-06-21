@@ -13,7 +13,7 @@
 /* header.css */
 .section1 {
   background-color: rgb(255, 255, 255);
-  position: relative;
+  /* position: relative; */
 }
 
 .navbar {

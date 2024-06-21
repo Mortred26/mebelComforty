@@ -9,8 +9,10 @@ import HeaderCarousel from "./header/HeaderCarousel";
 function Header() {
   return (
     <div>
-      <HeadSearch></HeadSearch>
-      <Navbar></Navbar>
+      <div className="mobile-navbar">
+        <HeadSearch></HeadSearch>
+        <Navbar></Navbar>
+      </div>
       <HeaderCarousel></HeaderCarousel>
     </div>
   );

@@ -160,45 +160,45 @@
   .footer-flex {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
   }
 
   .footer {
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
+    position: relative;
   }
 
   .footer-head {
     display: flex;
     flex-direction: column;
-  }
-
-  .footericon-main {
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
   }
 
   .footer-name {
     font-size: 20px;
-    margin-left: 0;
+    text-align: left;
   }
 
   .footer-text {
     font-size: 13px;
-    text-align: center;
-    max-width: ;
+    max-width: 250px;
   }
 
   .footer-social {
-    justify-content: center;
+    justify-content: left;
+    position: absolute;
+    bottom: 10px;
+    left: 35px;
   }
 
   .footer-social li {
-    padding: 10px;
+    padding: 6px;
   }
 
   .footerCategory-list,
   .footerSupport-list {
-    text-align: center;
+    text-align: left;
+    width: 100%;
   }
 }
