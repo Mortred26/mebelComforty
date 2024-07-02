@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "react-image-gallery/styles/css/image-gallery.css";
 import "../style/header.css";
 import "../style/details.css";
@@ -6,72 +6,92 @@ import "../style/laptopmedia.css";
 import "../style/mobilemedia.css";
 import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 
-function Detail() {
-  const images = [
-    {
-      original: "/image/product/product1.png",
-      thumbnail: "/image/product/product1.png",
-    },
-    {
-      original: "/image/product/product2.png",
-      thumbnail: "/image/product/product2.png",
-    },
-    {
-      original: "/image/product/product3.png",
-      thumbnail: "/image/product/product3.png",
-    },
-  ];
+function Detail({ onAddToCart }) {
+  const [product, setProduct] = useState(null);
+  const [quantity, setQuantity] = useState(1);
+  const { id } = useParams();
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await axios.get(
+          `https://remonabackend.onrender.com/api/v1/products/${id}`
+        );
+        setProduct(response.data);
+      } catch (error) {
+        console.error("Error fetching product:", error);
+      }
+    };
+
+    fetchProduct();
+  }, [id]);
+
+  if (!product) {
+    return <div>Loading...</div>;
+  }
+
+  const discountPercentage =
+    ((product.oldprice - product.price) / product.oldprice) * 100;
+
+  const handleQuantityChange = (change) => {
+    setQuantity((prevQuantity) => Math.max(1, prevQuantity + change));
+  };
 
   return (
     <div className="detail-container">
       <div className="detail-flex">
         <img
           className="detail-image"
-          src="/image/product/product1.png"
-          alt=""
+          src={`https://remonabackend.onrender.com/${product.image}`}
+          alt={product.name}
         />
         <div className="content-container">
-          <h3 className="detail-heading">Isolate Sofa Chair</h3>
+          <h3 className="detail-heading">{product.name}</h3>
           <div className="detailprice-flex">
             <p className="detail-price">
-              $250 <span className="detail-span">$500</span>
+              ${product.price}{" "}
+              <span className="detail-span">${product.oldprice}</span>
             </p>
-            <p className="detail-action">50% off</p>
+            <p className="detail-action">
+              {discountPercentage.toFixed(2)}% off
+            </p>
           </div>
-          <p className="detail-text">
-            As you run your fingers across the surface of this golden oak
-            colored vanity set, you’ll understand why it stands out from the
-            rest; from the table to the legs.
-          </p>
+          <p className="detail-text">{product.description}</p>
           <ul className="detail-info">
             <li>
               Material:{" "}
-              <span className="detailinfo-span">Polyester, Fabric</span>
+              <span className="detailinfo-span">{product.material}</span>
             </li>
             <li>
-              Brand: <span className="detailinfo-span">Purefit</span>
+              Brand:{" "}
+              <span className="detailinfo-span">{product.brand.name}</span>
             </li>
             <li>
-              Category: <span className="detailinfo-span">Wing Chair</span>
+              Category:{" "}
+              <span className="detailinfo-span">{product.category.name}</span>
             </li>
             <li>
-              Tag:{" "}
-              <span className="detailinfo-span">
-                minimalistic, Sofa, Living room
-              </span>
+              Tag: <span className="detailinfo-span">{product.name}</span>
             </li>
           </ul>
           <div className="detailstore-flex">
             <div className="stock-add">
-              <button>+</button>
-              <p>1</p>
-              <button>-</button>
+              <button onClick={() => handleQuantityChange(1)}>+</button>
+              <p>{quantity}</p>
+              <button onClick={() => handleQuantityChange(-1)}>-</button>
             </div>
-            <button className="detail-addcart">
-              <MdOutlineLocalGroceryStore className="detailstore-btn" />
-              add To Cart
-            </button>
+            <Link to="/store" className="detail-addcart-link">
+              <button
+                className="detail-addcart"
+                onClick={() => onAddToCart(product, quantity)}
+              >
+                <MdOutlineLocalGroceryStore className="detailstore-btn" />
+                Add To Cart
+              </button>
+            </Link>
             <button className="detail-heart">
               <FaRegHeart className="detailheart-btn" />
             </button>
@@ -79,14 +99,7 @@ function Detail() {
         </div>
       </div>
       <h3 className="detaildescription-name">Product Descriptions</h3>
-      <p className="detail-desctiption">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore
-        illum expedita numquam, eius laborum ipsa delectus, quis ipsum itaque
-        eum iste illo quasi cum cumque repellat. Dolorum iste nulla dolor porro
-        officiis, quasi molestias nostrum, voluptatum doloribus illum iure non
-        consequuntur dicta repudiandae enim fugiat odio nihil quas! Asperiores,
-        dolorum.'
-      </p>
+      <p className="detail-desctiption">{product.description}</p>
     </div>
   );
 }

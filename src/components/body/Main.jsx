@@ -6,14 +6,14 @@ import AllProduct from "./main/AllProduct";
 import Comments from "./main/Comments";
 import NewProducts from "./main/NewProducts";
 
-function Main() {
+function Main({ onAddToCart }) {
   return (
     <>
-      <FeaturedProducts></FeaturedProducts>
+      <FeaturedProducts onAddToCart={onAddToCart}></FeaturedProducts>
       <CenterMode />
-      <AllProduct />
+      <AllProduct onAddToCart={onAddToCart} />
       <Comments />
-      <NewProducts />
+      <NewProducts onAddToCart={onAddToCart} />
     </>
   );
 }

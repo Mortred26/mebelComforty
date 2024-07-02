@@ -100,6 +100,24 @@
 .stock-add button {
   background-color: white;
   border: none;
+  padding: 0 10px;
+}
+
+.detail-addcart-link {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(2 159 174);
+  border-radius: 6px;
+  border: none;
+  margin-left: 10px;
+  color: #fff;
+  text-transform: capitalize;
+  font-family: "Inter";
+  font-size: 16px;
+  text-decoration: none;
 }
 
 .detail-addcart {

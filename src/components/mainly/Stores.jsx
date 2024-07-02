@@ -2,19 +2,20 @@ import React from "react";
 import HeadSearch from "../body/header/HeadSearch";
 import Navbar from "../body/header/Navbar";
 import Footer from "../body/FooterComponent";
-import Detail from "../body/Detail";
-import SimilarProduct from "../body/main/SimilarProduct";
+import Store from "../body/Store";
 
-function Details({ cartCount, onAddToCart }) {
+function Stores({ cartCount, cartItems, handleDeleteFromCart }) {
   return (
     <>
       <HeadSearch cartCount={cartCount} />
       <Navbar />
-      <Detail onAddToCart={onAddToCart} />
-      <SimilarProduct onAddToCart={onAddToCart} />
+      <Store
+        cartItems={cartItems}
+        handleDeleteFromCart={handleDeleteFromCart}
+      />
       <Footer />
     </>
   );
 }
 
-export default Details;
+export default Stores;

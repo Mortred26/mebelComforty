@@ -1,27 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "../../style/main.css";
 import "../../style/header.css";
 import "../../style/laptopmedia.css";
 import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
-const FeaturedProducts = () => {
-  const NextArrow = ({ onClick }) => {
-    return (
-      <div className="arrow next" onClick={onClick}>
-        <HiArrowNarrowRight className="featured-arrow" />
-      </div>
-    );
-  };
+const FeaturedProducts = ({ onAddToCart }) => {
+  const [items, setProducts] = useState([]);
+  const NextArrow = ({ onClick }) => (
+    <div className="arrow next" onClick={onClick}>
+      <HiArrowNarrowRight className="featured-arrow" />
+    </div>
+  );
 
-  const PrevArrow = ({ onClick }) => {
-    return (
-      <div className="arrow prev" onClick={onClick}>
-        <HiArrowNarrowLeft className="featured-arrow" />
-      </div>
-    );
-  };
+  const PrevArrow = ({ onClick }) => (
+    <div className="arrow prev" onClick={onClick}>
+      <HiArrowNarrowLeft className="featured-arrow" />
+    </div>
+  );
 
   const settings = {
     dots: true,
@@ -38,7 +37,7 @@ const FeaturedProducts = () => {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          dots: false,
+          dots: true,
         },
       },
       {
@@ -47,7 +46,7 @@ const FeaturedProducts = () => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: false,
+          dots: true,
         },
       },
       {
@@ -55,7 +54,6 @@ const FeaturedProducts = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          dots: false,
         },
       },
       {
@@ -63,7 +61,6 @@ const FeaturedProducts = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          dots: false,
         },
       },
       {
@@ -85,94 +82,42 @@ const FeaturedProducts = () => {
     ],
   };
 
-  const items = [
-    {
-      id: 1,
-      imageSrc: "/image/product/product1.png",
-      title: "Library Stool Chair",
-      price: "$20",
-    },
-    {
-      id: 2,
-      imageSrc: "/image/product/product2.png",
-      title: "Library Stool Chair",
-      price: "$20",
-      oldprice: "$40",
-    },
-    {
-      id: 3,
-      imageSrc: "/image/product/Product3.png",
-      title: "Library Stool Chair",
-      price: "$20",
-      oldprice: "$40",
-    },
-    {
-      id: 4,
-      imageSrc: "/image/product/product4.png",
-      title: "Library Stool Chair",
-      price: "$20",
-      oldprice: "$40",
-    },
-    {
-      id: 5,
-      imageSrc: "/image/product/product2.png",
-      title: "Library Stool Chair",
-      price: "$20",
-    },
-    {
-      id: 6,
-      imageSrc: "/image/product/product1.png",
-      title: "Library Stool Chair",
-      price: "$20",
-    },
-    {
-      id: 7,
-      imageSrc: "/image/product/product2.png",
-      title: "Library Stool Chair",
-      price: "$20",
-      oldprice: "$40",
-    },
-    {
-      id: 8,
-      imageSrc: "/image/product/Product3.png",
-      title: "Library Stool Chair",
-      price: "$20",
-      oldprice: "$40",
-    },
-    {
-      id: 9,
-      imageSrc: "/image/product/product4.png",
-      title: "Library Stool Chair",
-      price: "$20",
-      oldprice: "$40",
-    },
-    {
-      id: 10,
-      imageSrc: "/image/product/product2.png",
-      title: "Library Stool Chair",
-      price: "$20",
-    },
-  ];
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get(
+          "https://remonabackend.onrender.com/api/v1/products"
+        );
+        setProducts(response.data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   const renderItems = items.map((item) => (
     <div key={item.id} className="item">
       <img
-        src={item.imageSrc}
-        alt={item.title}
+        src={`https://remonabackend.onrender.com/${item.image}`}
+        alt={item.name}
         className="carousel-image"
-        onClick={() => console.log(`Clicked on ${item.title}`)}
+        onClick={() => console.log(`Clicked on ${item.name}`)}
       />
       <div className="addstore-flex">
         <div className="item-text">
-          <h3>{item.title}</h3>
+          <Link className="router-link" to={`/details/${item._id}`}>
+            <h3>{item.name}</h3>
+          </Link>
           <div className="addstore-price">
             <p>
-              {item.price} <span>{item.oldprice}</span>
+              ${item.price} <span>${item.oldprice}</span>
             </p>
           </div>
         </div>
         <div className="addstore">
-          <button className="btn-addstore">
+          <button className="btn-addstore" onClick={() => onAddToCart(item)}>
             <MdOutlineLocalGroceryStore className="btnStore" />
           </button>
         </div>
@@ -181,14 +126,12 @@ const FeaturedProducts = () => {
   ));
 
   return (
-    <>
-      <div className="container">
-        <div className="FeaturedProduct">
-          <h2 className="FeaturedProduct-name ">recently Added</h2>
-          <Slider {...settings}>{renderItems}</Slider>
-        </div>
+    <div className="container">
+      <div className="FeaturedProduct">
+        <h2 className="FeaturedProduct-name">Featured Products</h2>
+        <Slider {...settings}>{renderItems}</Slider>
       </div>
-    </>
+    </div>
   );
 };
 

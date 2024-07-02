@@ -1,0 +1,271 @@
+.section-store {
+  background-color: #f0f2f3;
+  padding: 40px 0;
+}
+
+.container-store {
+  padding: 0 250px;
+  margin: 0 auto;
+  max-width: 1920px;
+}
+
+.store-main {
+  background-color: #fff;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+.storeInput {
+  margin-bottom: 32px;
+  display: flex;
+}
+
+.store-input {
+  padding: 17px 20px;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 8px;
+}
+
+.store-input:not(:nth-last-child(1)) {
+  margin-right: 20px;
+}
+
+.hidden-delete {
+  display: none;
+}
+
+.store-items {
+  width: 100%;
+  max-width: 550px;
+}
+
+.store-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.stores-image {
+  width: 50px;
+  height: 50px;
+}
+
+.stores-name {
+  margin-left: 20px;
+}
+
+.stores-price {
+  margin-left: auto;
+}
+
+.total-price {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 8px;
+  max-width: 350px;
+}
+
+.totalprice-flex {
+  display: flex;
+  width: 100%;
+  max-width: 350px;
+}
+
+.totalprice-count {
+  margin-left: auto;
+}
+
+.pagination-button {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  padding: 6px 8px;
+  border-radius: 100%;
+  color: black;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+}
+
+.pagination-button:not(:nth-last-child(1)) {
+  margin-right: 5px;
+}
+
+.store-delete {
+  padding: 8px 12px;
+  background-color: red;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  margin-left: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+}
+
+.stores-button {
+  margin-top: 40px;
+  background-color: rgb(2, 159, 174);
+  transition-property: background-color, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  width: 100%;
+  max-width: 368.812px;
+  padding: 16px 0;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stock-margin {
+  margin-left: 20px;
+}
+
+.btn-stores {
+  margin-left: 8px;
+}
+
+.storeflex {
+  display: flex;
+  align-items: center;
+}
+
+.storeflex2 {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+@media (max-width: 1024px) {
+  .container-store {
+    padding: 0 140px;
+  }
+
+  .store-item {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .storeflex {
+    margin-bottom: 15px;
+  }
+
+  .storeflex2 {
+    margin-left: 0;
+  }
+
+  .hidden-delete {
+    display: block;
+    margin-left: 15px;
+    fill: red;
+  }
+
+  .store-delete {
+    display: none;
+  }
+
+  .stock-add {
+    padding: 0;
+  }
+
+  .stock-add p {
+    width: 9px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .container-store {
+    padding: 0 80px;
+  }
+
+  .store-main {
+    padding: 22px;
+  }
+
+  .store-item {
+    margin-bottom: 25px;
+    max-width: 480px;
+  }
+
+  .store-input {
+    padding: 12px 14px;
+  }
+
+  .stores-name {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .stores-price {
+    font-size: 14px;
+  }
+
+  .store-delete {
+    font-size: 12px;
+  }
+
+  .total-price {
+    max-width: 300px;
+  }
+
+  .totalprice-name {
+    font-size: 14px;
+  }
+
+  .totalprice-count {
+    font-size: 14px;
+  }
+
+  .stores-button {
+    padding: 12px 0;
+    font-size: 15px;
+  }
+
+  .btn-stores {
+    margin-left: 4px;
+  }
+}
+
+@media screen and (max-width: 610px) {
+}
+
+@media screen and (max-width: 480px) {
+  .container-store {
+    padding: 0 40px;
+  }
+
+  .store-input {
+    padding: 4px;
+    border-radius: 4px;
+  }
+
+  .store-input:not(:nth-last-child(1)) {
+    margin-right: 10px;
+  }
+
+  .store-input::placeholder {
+    font-size: 10px;
+  }
+
+  .store-input::-webkit-input-placeholder {
+    font-size: 10px; /* Chrome, Safari, Opera */
+  }
+
+  .store-input::-moz-placeholder {
+    font-size: 10px; /* Firefox 19+ */
+  }
+
+  .store-input:-ms-input-placeholder {
+    font-size: 10px; /* IE 10+ */
+  }
+
+  .store-input:-moz-placeholder {
+    font-size: 10px; /* Firefox 18- */
+  }
+}

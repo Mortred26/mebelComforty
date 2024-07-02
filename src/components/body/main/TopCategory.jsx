@@ -3,23 +3,27 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../style/main.css";
+import axios from "axios";
 
 function CenterMode() {
-  const [slideIndex, setSlideIndex] = useState(0);
+  const [slideIndex, setSlideIndex] = useState(0); // Set initial slideIndex to 0
   const [settings, setSettings] = useState({});
+  const [images, setImages] = useState([]);
 
-  const images = [
-    { src: "/image/product/category.png", name: "Wing Chair", stock: "3,584" },
-    { src: "/image/product/category2.png", name: "Wooden Chair", stock: "157" },
-    { src: "/image/product/category3.png", name: "Desk Chair", stock: "154" },
-    { src: "/image/product/category4.png", name: "Park Bench", stock: "35" },
-    {
-      src: "/image/product/category5.png",
-      name: "Wooden Chair",
-      stock: "2,584",
-    },
-    { src: "/image/product/category3.png", name: "Desk Chair", stock: "154" },
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://remonabackend.onrender.com/api/v1/category"
+        );
+        setImages(response.data);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const updateSettings = () => {
@@ -165,7 +169,11 @@ function CenterMode() {
               }
               key={index}
             >
-              <img className="slider-img" src={image.src} alt={image.name} />
+              <img
+                className="slider-img"
+                src={`https://remonabackend.onrender.com/${image.image}`}
+                alt={image.name}
+              />
               <div className="slider-text">
                 <h3>{image.name}</h3>
                 <p>{image.stock} Products</p>

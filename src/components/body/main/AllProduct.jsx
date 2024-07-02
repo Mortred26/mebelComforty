@@ -1,126 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   MdOutlineKeyboardDoubleArrowLeft,
   MdOutlineKeyboardDoubleArrowRight,
   MdOutlineLocalGroceryStore,
 } from "react-icons/md";
-
+import axios from "axios";
 import "../../style/header.css";
 import "../../style/main.css";
 
-function AllProduct() {
+function AllProduct({ onAddToCart }) {
+  const [items, setProducts] = useState([]);
   const itemsPerPage = 9;
-  const items = [
-    {
-      id: 1,
-      imageSrc: "/image/product/product1.png",
-      title: "Library Stool Chair",
-      price: "$20",
-      oldprice: "$40",
-    },
-    {
-      id: 2,
-      imageSrc: "/image/product/product2.png",
-      title: "Library Stool Chair",
-      price: "$20",
-      oldprice: "$40",
-    },
-    {
-      id: 3,
-      imageSrc: "/image/product/Product3.png",
-      title: "Library Stool Chair",
-      price: "$20",
-    },
-    {
-      id: 4,
-      imageSrc: "/image/product/product4.png",
-      title: "Library Stool Chair",
-      price: "$20",
-    },
-    {
-      id: 5,
-      imageSrc: "/image/product/product2.png",
-      title: "Library Stool Chair",
-      price: "$20",
-    },
-    {
-      id: 6,
-      imageSrc: "/image/product/product1.png",
-      title: "Library Stool Chair",
-      price: "$20",
-      oldprice: "$40",
-    },
-    {
-      id: 7,
-      imageSrc: "/image/product/product2.png",
-      title: "Library Stool Chair",
-      price: "$20",
-    },
-    {
-      id: 8,
-      imageSrc: "/image/product/Product3.png",
-      title: "Library Stool Chair",
-      price: "$20",
-    },
-    {
-      id: 9,
-      imageSrc: "/image/product/product4.png",
-      title: "Library Stool Chair",
-      price: "$20",
-    },
-    {
-      id: 10,
-      imageSrc: "/image/product/product2.png",
-      title: "Library Stool Chair",
-      price: "$20",
-      oldprice: "$40",
-    },
-    {
-      id: 11,
-      imageSrc: "/image/product/product4.png",
-      title: "Library Stool Chair",
-      price: "$20",
-    },
-    {
-      id: 12,
-      imageSrc: "/image/product/product2.png",
-      title: "Library Stool Chair",
-      price: "$20",
-      oldprice: "$40",
-    },
-    {
-      id: 13,
-      imageSrc: "/image/product/product4.png",
-      title: "Library Stool Chair",
-      price: "$20",
-    },
-    {
-      id: 14,
-      imageSrc: "/image/product/product2.png",
-      title: "Library Stool Chair",
-      price: "$20",
-      oldprice: "$40",
-    },
-    {
-      id: 15,
-      imageSrc: "/image/product/product2.png",
-      title: "Library Stool Chair",
-      price: "$20",
-    },
-    {
-      id: 16,
-      imageSrc: "/image/product/product4.png",
-      title: "Library Stool Chair",
-      price: "$20",
-    },
-    {
-      id: 17,
-      imageSrc: "/image/product/product2.png",
-      title: "Library Stool Chair",
-      price: "$20",
-      oldprice: "$40",
-    },
-  ];
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get(
+          "https://remonabackend.onrender.com/api/v1/products",
+          {}
+        );
+        setProducts(response.data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -219,10 +125,13 @@ function AllProduct() {
         <div className="allProduct-main">
           {currentItems.map((item) => (
             <div key={item.id} className="allproduct">
-              <img src={item.imageSrc} alt={item.title} />
+              <img
+                src={`https://remonabackend.onrender.com/${item.image}`}
+                alt={item.name}
+              />
               <div className="addstore-flex">
                 <div className="item-text">
-                  <h3>{item.title}</h3>
+                  <h3>{item.name}</h3>
                   <div className="addstore-price">
                     <p>
                       {item.price} <span>{item.oldprice}</span>
@@ -230,7 +139,10 @@ function AllProduct() {
                   </div>
                 </div>
                 <div className="addstore2">
-                  <button className="btn-addstore">
+                  <button
+                    className="btn-addstore"
+                    onClick={() => onAddToCart(item)}
+                  >
                     <MdOutlineLocalGroceryStore className="btnStore" />
                   </button>
                 </div>

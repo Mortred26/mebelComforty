@@ -2,11 +2,11 @@ import Main from "../body/Main";
 import Header from "../body/Header";
 import Footer from "../body/FooterComponent";
 
-function HomePage() {
+function HomePage({ cartCount, onAddToCart }) {
   return (
     <>
-      <Header></Header>
-      <Main></Main>
+      <Header cartCount={cartCount} />
+      <Main onAddToCart={onAddToCart} />
       <Footer></Footer>
     </>
   );

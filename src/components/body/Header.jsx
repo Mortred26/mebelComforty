@@ -6,11 +6,11 @@ import HeadSearch from "./header/HeadSearch";
 import Navbar from "./header/Navbar";
 import HeaderCarousel from "./header/HeaderCarousel";
 
-function Header() {
+function Header({ cartCount }) {
   return (
     <div>
       <div className="mobile-navbar">
-        <HeadSearch></HeadSearch>
+        <HeadSearch cartCount={cartCount} />
         <Navbar></Navbar>
       </div>
       <HeaderCarousel></HeaderCarousel>

@@ -8,7 +8,7 @@ import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { Link } from "react-router-dom";
 
-function HeadSearch() {
+function HeadSearch({ cartCount = "0" }) {
   const [isActive, setIsActive] = useState(false);
 
   const handleMouseDown = () => {
@@ -35,10 +35,13 @@ function HeadSearch() {
             </button>
           </div>
           <div className="head-button">
-            <button className="btn-addcart">
-              <MdOutlineLocalGroceryStore className="btn-addcart-svg" />
-              <p>Cart</p>
-            </button>
+            <Link to="/store" className="router-link margin-right">
+              <button className="btn-addcart">
+                <MdOutlineLocalGroceryStore className="btn-addcart-svg" />
+                <p>Cart</p>
+                <h4 className="header-counts">{cartCount}</h4>
+              </button>
+            </Link>
             <button
               className="heart"
               onMouseDown={handleMouseDown}
