@@ -3,7 +3,7 @@ import FeaturedProducts from "./main/FeaturedProuduct";
 
 import CenterMode from "./main/TopCategory";
 import AllProduct from "./main/AllProduct";
-import Comments from "./main/Comments";
+
 import NewProducts from "./main/NewProducts";
 
 function Main({ onAddToCart }) {
@@ -12,7 +12,6 @@ function Main({ onAddToCart }) {
       <FeaturedProducts onAddToCart={onAddToCart}></FeaturedProducts>
       <CenterMode />
       <AllProduct onAddToCart={onAddToCart} />
-      <Comments />
       <NewProducts onAddToCart={onAddToCart} />
     </>
   );

@@ -1,15 +1,29 @@
-import React, { useState } from "react";
-import "../../style/header.css";
-import "../../style/laptopmedia.css";
-import "../../style//mobilemedia.css";
+import React, { useEffect, useState } from "react";
 import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import { IoSearch } from "react-icons/io5";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import "../../style/header.css";
+import "../../style/laptopmedia.css";
+import "../../style/mobilemedia.css";
 
-function HeadSearch({ cartCount = "0" }) {
+function HeadSearch({ cartCount = "0", handleSearch }) {
   const [isActive, setIsActive] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSearchInputChange = (event) => {
+    setSearchQuery(event.target.value.toLowerCase());
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    handleSearch(searchQuery);
+    navigate("/search");
+  };
 
   const handleMouseDown = () => {
     setIsActive(true);
@@ -18,6 +32,7 @@ function HeadSearch({ cartCount = "0" }) {
   const handleMouseUp = () => {
     setIsActive(false);
   };
+
   return (
     <section className="section">
       <div className="container">
@@ -28,17 +43,26 @@ function HeadSearch({ cartCount = "0" }) {
             </Link>
             <h2>Remona Mebel</h2>
           </div>
-          <div className="input-search">
-            <input type="text" placeholder="Search here..." />
+          <form className="input-search" onSubmit={handleSearchSubmit}>
+            <input
+              type="text"
+              placeholder="Search here..."
+              value={searchQuery}
+              onChange={handleSearchInputChange}
+            />
             <button className="btn-search">
               <IoSearch className="headerSearch-img" />
             </button>
-          </div>
+          </form>
           <div className="head-button">
             <Link to="/store" className="router-link margin-right">
               <button className="btn-addcart">
                 <MdOutlineLocalGroceryStore className="btn-addcart-svg" />
                 <p>Cart</p>
+                <h4 className="header-counts">{cartCount}</h4>
+              </button>
+              <button className="btn-addcart2">
+                <MdOutlineLocalGroceryStore className="btn-addcart-svg" />
                 <h4 className="header-counts">{cartCount}</h4>
               </button>
             </Link>

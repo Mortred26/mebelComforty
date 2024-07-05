@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../style/store.css";
-import { FaArrowRightLong } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
 
 function Store({ cartItems = [], handleDeleteFromCart }) {
@@ -44,13 +43,20 @@ function Store({ cartItems = [], handleDeleteFromCart }) {
     setTotalPrice(newTotalPrice.toFixed(2));
   }, [quantities, cartItems]);
 
-  const sendMessages = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent form submission
+
+    if (!firstName || number.length < 9) {
+      alert("Please fill in all fields correctly.");
+      return;
+    }
+
     const order = {
       firstName: firstName,
       phone: number,
       items: cartItems.map((item) => ({
         name: item.name,
-        image: item.image,
+        image: item.image, // Use item.image directly from cartItems
         quantity: quantities[item._id],
       })),
     };
@@ -61,19 +67,21 @@ function Store({ cartItems = [], handleDeleteFromCart }) {
 
     try {
       for (const item of order.items) {
-        // Send the photo for each item
+        // Fetch the image from localStorage
+        const imageBlob = await fetch(item.image).then((res) => res.blob());
+
+        // Create form data to send the photo
+        const formData = new FormData();
+        formData.append("chat_id", ChatID);
+        formData.append("photo", imageBlob, "photo.jpg");
+        formData.append("caption", `${item.name} - ${item.quantity} ta`);
+
+        // Send the photo to Telegram
         await fetch(
           `https://api.telegram.org/bot${TelegramBotToken}/sendPhoto`,
           {
             method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              chat_id: ChatID,
-              photo: `https://remonabackend.onrender.com/${item.image}`,
-              caption: `${item.name} - ${item.quantity} ta`,
-            }),
+            body: formData,
           }
         );
       }
@@ -103,7 +111,7 @@ function Store({ cartItems = [], handleDeleteFromCart }) {
 
   return (
     <section className="section-store">
-      <div className="container-store">
+      <form className="container-store" onSubmit={handleSubmit}>
         <div className="store-main">
           <div className="storeInput">
             <input
@@ -111,7 +119,8 @@ function Store({ cartItems = [], handleDeleteFromCart }) {
               onChange={(e) => setFirstName(e.target.value)}
               className="store-input"
               type="text"
-              placeholder="First Name"
+              placeholder="Name"
+              required
             />
             <input
               value={number}
@@ -119,6 +128,8 @@ function Store({ cartItems = [], handleDeleteFromCart }) {
               className="store-input"
               type="text"
               placeholder="Phone"
+              required
+              minLength="9"
             />
           </div>
           <div className="store-items">
@@ -127,7 +138,7 @@ function Store({ cartItems = [], handleDeleteFromCart }) {
                 <div className="storeflex">
                   <img
                     className="stores-image"
-                    src={`https://remonabackend.onrender.com/${item.image}`}
+                    src={item.image}
                     alt={item.name}
                   />
                   <p className="stores-name">{item.name}</p>
@@ -178,11 +189,15 @@ function Store({ cartItems = [], handleDeleteFromCart }) {
             <p className="totalprice-name">Total: </p>
             <p className="totalprice-count">${totalPrice}</p>
           </div>
-          <button className="stores-button" onClick={sendMessages}>
-            Place Order <FaArrowRightLong className="btn-stores" />
-          </button>
+          <div>
+            <input
+              type="submit"
+              value="Place Order!"
+              className="stores-button"
+            />
+          </div>
         </div>
-      </div>
+      </form>
     </section>
   );
 }

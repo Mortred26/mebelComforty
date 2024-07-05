@@ -2,10 +2,10 @@ import Main from "../body/Main";
 import Header from "../body/Header";
 import Footer from "../body/FooterComponent";
 
-function HomePage({ cartCount, onAddToCart }) {
+function HomePage({ cartCount, onAddToCart, handleSearch }) {
   return (
     <>
-      <Header cartCount={cartCount} />
+      <Header cartCount={cartCount} handleSearch={handleSearch} />
       <Main onAddToCart={onAddToCart} />
       <Footer></Footer>
     </>

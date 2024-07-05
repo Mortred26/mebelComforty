@@ -10,6 +10,10 @@
   padding: 0 20px;
 }
 
+.search-padding {
+  padding: 50px 0;
+}
+
 /* header.css */
 .section1 {
   background-color: rgb(255, 255, 255);

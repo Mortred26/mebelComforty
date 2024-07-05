@@ -1,33 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   MdOutlineKeyboardDoubleArrowLeft,
   MdOutlineKeyboardDoubleArrowRight,
   MdOutlineLocalGroceryStore,
 } from "react-icons/md";
-import axios from "axios";
-import "../../style/header.css";
-import "../../style/main.css";
 import { Link } from "react-router-dom";
 
-function AllProduct({ onAddToCart }) {
-  const [items, setProducts] = useState([]);
+function Search({ filteredProducts = [], onAddToCart }) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get(
-          "https://remonabackend.onrender.com/api/v1/products"
-        );
-        setProducts(response.data);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
-
-    fetchProducts();
-  }, []);
 
   const images = [
     "/image/product/product1.png",
@@ -40,7 +21,8 @@ function AllProduct({ onAddToCart }) {
     "/image/product/product8.png",
   ];
 
-  const totalPages = Math.ceil(items.length / itemsPerPage);
+  // Calculate total pages based on filteredProducts length
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
   const handlePageChange = (pageNumber) => {
     if (pageNumber > totalPages) {
@@ -52,14 +34,16 @@ function AllProduct({ onAddToCart }) {
     }
   };
 
+  // Calculate current items to display on the current page
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentItems = items
+  const currentItems = filteredProducts
     .slice(startIndex, startIndex + itemsPerPage)
     .map((item, index) => ({
       ...item,
       image: images[index % images.length],
     }));
 
+  // Function to render pagination buttons
   const renderPageNumbers = () => {
     const maxPagesToShow = 7;
     let startPage = Math.max(currentPage - Math.floor(maxPagesToShow / 2), 1);
@@ -127,16 +111,10 @@ function AllProduct({ onAddToCart }) {
   };
 
   return (
-    <section className="section4">
+    <section className="section4 search-padding">
       <div className="container">
-        <h2 className="allProduct-name">Our Products</h2>
-        <ul className="allProducts-page">
-          <li>All</li>
-          <li>Newest</li>
-          <li>Trending</li>
-          <li>Best Sellers</li>
-          <li>Featured</li>
-        </ul>
+        <h2 className="allProduct-name">According to your search</h2>
+
         <div className="allProduct-main">
           {currentItems.map((item) => (
             <div key={item._id} className="allproduct">
@@ -202,4 +180,4 @@ function AllProduct({ onAddToCart }) {
   );
 }
 
-export default AllProduct;
+export default Search;

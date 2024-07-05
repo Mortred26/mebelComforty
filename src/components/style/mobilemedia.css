@@ -72,6 +72,7 @@
 
   .navbar-telephone {
     position: absolute;
+    display: none;
     top: 52px;
     right: 35px;
     padding: 3px 5px;
@@ -183,6 +184,29 @@
 
   .btn-addcart {
     display: none;
+  }
+
+  .btn-addcart2 {
+    display: flex;
+    align-items: center;
+    padding: 6.5px;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    position: absolute;
+    right: 32px;
+    top: 53px;
+    border: 1px solid rgb(225, 227, 230);
+  }
+
+  .btn-addcart-svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .header-counts {
+    left: 18px;
+    font-size: 4px;
   }
 
   .heart {
@@ -609,6 +633,11 @@
 
   .addstore2 {
     margin-left: auto;
+  }
+
+  .btn-addcart2 {
+    right: 14px;
+    top: 47px;
   }
 
   .item-text h3 {

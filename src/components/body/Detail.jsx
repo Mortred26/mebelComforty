@@ -40,14 +40,12 @@ function Detail({ onAddToCart }) {
     setQuantity((prevQuantity) => Math.max(1, prevQuantity + change));
   };
 
+  const img = localStorage.getItem(`image_${id}`);
+
   return (
     <div className="detail-container">
       <div className="detail-flex">
-        <img
-          className="detail-image"
-          src={`https://remonabackend.onrender.com/${product.image}`}
-          alt={product.name}
-        />
+        <img className="detail-image" src={`${img}`} alt={product.name} />
         <div className="content-container">
           <h3 className="detail-heading">{product.name}</h3>
           <div className="detailprice-flex">

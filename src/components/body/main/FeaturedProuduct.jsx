@@ -10,6 +10,7 @@ import axios from "axios";
 
 const FeaturedProducts = ({ onAddToCart }) => {
   const [items, setProducts] = useState([]);
+
   const NextArrow = ({ onClick }) => (
     <div className="arrow next" onClick={onClick}>
       <HiArrowNarrowRight className="featured-arrow" />
@@ -97,33 +98,70 @@ const FeaturedProducts = ({ onAddToCart }) => {
     fetchProducts();
   }, []);
 
-  const renderItems = items.map((item) => (
-    <div key={item.id} className="item">
-      <img
-        src={`https://remonabackend.onrender.com/${item.image}`}
-        alt={item.name}
-        className="carousel-image"
-        onClick={() => console.log(`Clicked on ${item.name}`)}
-      />
-      <div className="addstore-flex">
-        <div className="item-text">
-          <Link className="router-link" to={`/details/${item._id}`}>
-            <h3>{item.name}</h3>
-          </Link>
-          <div className="addstore-price">
-            <p>
-              ${item.price} <span>${item.oldprice}</span>
-            </p>
+  const images = [
+    "/image/product/product1.png",
+    "/image/product/product2.png",
+    "/image/product/product3.png",
+    "/image/product/product4.png",
+    "/image/product/product5.png",
+    "/image/product/product6.png",
+    "/image/product/product7.png",
+    "/image/product/product8.png",
+  ];
+
+  const renderItems = items.map((item, index) => {
+    const imageUrl = images[index % images.length];
+
+    const finalImageUrl = imageUrl;
+
+    return (
+      <div key={item.id} className="item">
+        <Link
+          className="router-link"
+          onClick={() => {
+            localStorage.setItem(`image_${item._id}`, imageUrl);
+          }}
+          to={`/details/${item._id} `}
+        >
+          <img
+            src={finalImageUrl}
+            alt={item.name}
+            className="carousel-image"
+            onClick={() => console.log(`Clicked on ${item.name}`)}
+          />
+        </Link>
+        <div className="addstore-flex">
+          <div className="item-text">
+            <Link
+              className="router-link"
+              onClick={() => {
+                localStorage.setItem(`image_${item._id}`, imageUrl);
+              }}
+              to={`/details/${item._id} `}
+            >
+              <h3>{item.name}</h3>
+            </Link>
+            <div className="addstore-price">
+              <p>
+                ${item.price} <span>${item.oldprice}</span>
+              </p>
+            </div>
+          </div>
+          <div className="addstore">
+            <button
+              className="btn-addstore"
+              onClick={() => {
+                onAddToCart({ ...item, image: imageUrl });
+                localStorage.setItem(`image_${item._id}`, imageUrl);
+              }}
+            >
+              <MdOutlineLocalGroceryStore className="btnStore" />
+            </button>
           </div>
         </div>
-        <div className="addstore">
-          <button className="btn-addstore" onClick={() => onAddToCart(item)}>
-            <MdOutlineLocalGroceryStore className="btnStore" />
-          </button>
-        </div>
       </div>
-    </div>
-  ));
+    );
+  });
 
   return (
     <div className="container">

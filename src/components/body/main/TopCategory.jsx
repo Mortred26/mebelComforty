@@ -6,9 +6,9 @@ import "../../style/main.css";
 import axios from "axios";
 
 function CenterMode() {
-  const [slideIndex, setSlideIndex] = useState(0); // Set initial slideIndex to 0
+  const [slideIndex, setSlideIndex] = useState(4); // Set initial slideIndex to 0
   const [settings, setSettings] = useState({});
-  const [images, setImages] = useState([]);
+  const [category, setCategory] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,7 +16,7 @@ function CenterMode() {
         const response = await axios.get(
           "https://remonabackend.onrender.com/api/v1/category"
         );
-        setImages(response.data);
+        setCategory(response.data);
       } catch (error) {
         console.error("Error fetching categories:", error);
       }
@@ -40,10 +40,10 @@ function CenterMode() {
           dots: false,
           initialSlide: slideIndex,
           beforeChange: (current, next) => {
-            if (next === images.length) {
+            if (next === category.length) {
               setSlideIndex(0);
             } else if (next === -1) {
-              setSlideIndex(images.length - 1);
+              setSlideIndex(category.length - 1);
             } else {
               setSlideIndex(next);
             }
@@ -61,10 +61,10 @@ function CenterMode() {
           dots: false,
           initialSlide: slideIndex,
           beforeChange: (current, next) => {
-            if (next === images.length) {
+            if (next === category.length) {
               setSlideIndex(0);
             } else if (next === -1) {
-              setSlideIndex(images.length - 1);
+              setSlideIndex(category.length - 1);
             } else {
               setSlideIndex(next);
             }
@@ -82,10 +82,10 @@ function CenterMode() {
           dots: false,
           initialSlide: slideIndex,
           beforeChange: (current, next) => {
-            if (next === images.length) {
+            if (next === category.length) {
               setSlideIndex(0);
             } else if (next === -1) {
-              setSlideIndex(images.length - 1);
+              setSlideIndex(category.length - 1);
             } else {
               setSlideIndex(next);
             }
@@ -103,10 +103,10 @@ function CenterMode() {
           dots: false,
           initialSlide: slideIndex,
           beforeChange: (current, next) => {
-            if (next === images.length) {
+            if (next === category.length) {
               setSlideIndex(0);
             } else if (next === -1) {
-              setSlideIndex(images.length - 1);
+              setSlideIndex(category.length - 1);
             } else {
               setSlideIndex(next);
             }
@@ -124,10 +124,10 @@ function CenterMode() {
           dots: false,
           initialSlide: slideIndex,
           beforeChange: (current, next) => {
-            if (next === images.length) {
+            if (next === category.length) {
               setSlideIndex(0);
             } else if (next === -1) {
-              setSlideIndex(images.length - 1);
+              setSlideIndex(category.length - 1);
             } else {
               setSlideIndex(next);
             }
@@ -139,15 +139,23 @@ function CenterMode() {
     updateSettings();
     window.addEventListener("resize", updateSettings);
     return () => window.removeEventListener("resize", updateSettings);
-  }, [slideIndex, images.length]);
+  }, [slideIndex, category.length]);
 
   useEffect(() => {
     if (slideIndex < 0) {
-      setSlideIndex(images.length - 1);
-    } else if (slideIndex >= images.length) {
+      setSlideIndex(category.length - 1);
+    } else if (slideIndex >= category.length) {
       setSlideIndex(0);
     }
-  }, [slideIndex, images.length]);
+  }, [slideIndex, category.length]);
+
+  const images = [
+    { image: "/image/product/DeskChair.png", name: "Desk Chair", stock: 10 },
+    { image: "/image/product/ParkBench.png", name: "Park Bench", stock: 5 },
+    { image: "/image/product/WingChair.png", name: "Wing Chair", stock: 7 },
+    { image: "/image/product/WoodenChair.png", name: "Wooden Chair", stock: 3 },
+    { image: "/image/product/product8.png", name: "Product 8", stock: 15 },
+  ];
 
   return (
     <section className="section3">
@@ -161,22 +169,18 @@ function CenterMode() {
               className={
                 index === slideIndex ||
                 index ===
-                  (slideIndex === 0 ? images.length - 1 : slideIndex - 1) ||
+                  (slideIndex === 0 ? category.length - 1 : slideIndex - 1) ||
                 index ===
-                  (slideIndex === images.length - 1 ? 0 : slideIndex + 1)
+                  (slideIndex === category.length - 1 ? 0 : slideIndex + 1)
                   ? "slide slide-active"
                   : "slide"
               }
               key={index}
             >
-              <img
-                className="slider-img"
-                src={`https://remonabackend.onrender.com/${image.image}`}
-                alt={image.name}
-              />
+              <img className="slider-img" src={image.image} alt={image.name} />
               <div className="slider-text">
                 <h3>{image.name}</h3>
-                <p>{image.stock} Products</p>
+                <p>{`${image.stock} Products`}</p>
               </div>
             </div>
           ))}
